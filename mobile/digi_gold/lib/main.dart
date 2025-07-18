@@ -6,6 +6,7 @@ import 'features/onboarding/screens/onboarding_screen.dart';
 import 'features/gold/screens/portfolio_screen.dart';
 import 'features/gold/screens/schemes_screen.dart';
 import 'features/gold/screens/transaction_history_screen.dart';
+import 'features/gold/screens/buy_gold_screen.dart';
 import 'features/gold/services/gold_price_service.dart';
 import 'features/gold/models/gold_price_model.dart';
 
@@ -274,11 +275,10 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      // TODO: Navigate to buy gold screen
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Buy Gold feature coming soon!'),
-                          backgroundColor: AppColors.info,
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BuyGoldScreen(),
                         ),
                       );
                     },

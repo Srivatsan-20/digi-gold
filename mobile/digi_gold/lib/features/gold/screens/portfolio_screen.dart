@@ -7,6 +7,7 @@ import '../models/gold_scheme_model.dart';
 import '../services/gold_price_service.dart';
 import '../services/gold_scheme_service.dart';
 import 'transaction_history_screen.dart';
+import 'buy_gold_screen.dart';
 
 class PortfolioScreen extends StatefulWidget {
   const PortfolioScreen({super.key});
@@ -494,7 +495,12 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
               child: CustomButton(
                 text: 'Buy Gold',
                 onPressed: () {
-                  // TODO: Navigate to buy gold
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BuyGoldScreen(),
+                    ),
+                  );
                 },
                 type: ButtonType.primary,
                 icon: Icons.add_shopping_cart,
